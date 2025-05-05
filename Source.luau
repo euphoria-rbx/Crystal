@@ -128,7 +128,6 @@ playerInfo.Avatar.Image = "https://www.roblox.com/headshot-thumbnail/image?userI
 
 -- Session info
 
--- https://github.com/SiriusSoftwareLtd/Sirius/blob/request/source.lua#L2360-L2364
 local function format(n) return string.format("%02i", n) end
 
 local function toHMS(sec)
@@ -159,7 +158,6 @@ updatePlayersText()
 Players.PlayerAdded:Connect(updatePlayersText)
 Players.PlayerRemoving:Connect(updatePlayersText)
 
--- Rejoin (https://github.com/SiriusSoftwareLtd/Sirius/blob/request/source.lua#L2144-L2153)
 gameInfo.Rejoin.MouseButton1Click:Connect(function()
 	pcall(function() queueonteleport(game:HttpGet("https://raw.githubusercontent.com/ice-rbx/Crystal/refs/heads/main/Source.luau", true)) end)
 
@@ -170,7 +168,6 @@ gameInfo.Rejoin.MouseButton1Click:Connect(function()
 	end
 end)
 
--- Serverhop (https://github.com/SiriusSoftwareLtd/Sirius/blob/request/source.lua#L2155-L2176) sorry, this script is heavily pasted
 gameInfo.Serverhop.MouseButton1Click:Connect(function()
 	local highestPlayers = 0
 	local servers = {}
