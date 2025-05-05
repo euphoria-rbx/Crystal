@@ -1,3 +1,19 @@
+--[[
+	Crystal | Dev Build
+
+	Scripter: @mt.__index
+	Developer: @mt.__index
+
+	Copyright: Do whatever you want, I don't care.
+]]
+
+if _CRYSTAL_LOADED then return end
+getgenv()._CRYSTAL_LOADED = true
+
+if not game:IsLoaded() then
+	game.Loaded:Wait()
+end
+
 -- Services
 local Players = game:GetService("Players")
 local tweenService = game:GetService("TweenService")
@@ -84,19 +100,19 @@ for _, button in pairs(container:GetDescendants()) do
 	    	end
 
 	    button.MouseEnter:Connect(function()
-		changeColor(button, 10)
+			changeColor(button, 10)
 	    end)
 
 	    button.MouseLeave:Connect(function()
-		changeColor(button, true)
+			changeColor(button, true)
 	    end)
 
 	    button.MouseButton1Down:Connect(function()
-		changeColor(button, 20)
+			changeColor(button, 20)
 	    end)
 
 	    button.MouseButton1Up:Connect(function()
-		changeColor(button, true)
+			changeColor(button, true)
 	    end)
 	end
 end
@@ -170,7 +186,7 @@ gameInfo.Serverhop.MouseButton1Click:Connect(function()
 
 	if #servers > 0 then
 		task.wait(0.3)
-		pcall(function() queueonteleport(game:HttpGet("https://raw.githubusercontent.com/ice-rbx/Crystal/refs/heads/main/Source.luau", true)) end)
+		pcall(function() queueonteleport(game:HttpGet("https://raw.githubusercontent.com/euphoria-rbx/Crystal/refs/heads/main/Source.luau", true)) end)
 		teleportService:TeleportToPlaceInstance(game.PlaceId, servers[1])
 	end
 end)
