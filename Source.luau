@@ -1,8 +1,8 @@
 --[[
 	Crystal | Dev Build
 
-	Scripter: @mt.__index
-	Developer: @mt.__index
+	Scripters: @mt.__index, @getsolyn
+	Designer: @mt.__index
 
 	Copyright: Do whatever you want, I don't care. 
 ]]
