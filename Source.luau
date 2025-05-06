@@ -1,10 +1,10 @@
 --[[
 	Crystal | Dev Build
 
-	Scripters: @mt.__index, @getsolyn
+	Scripter: @mt.__index, @getsolyn
 	Designer: @mt.__index
 
-	Copyright: Do whatever you want, I don't care. 
+	Copyright: Do whatever you want, I don't care.
 ]]
 
 if _CRYSTAL_LOADED then return end
@@ -122,6 +122,11 @@ local homePage = container.TabPages.Home.Components
 
 local playerInfo = homePage.PlayerInfo
 
+-- Copy localplayer's profile
+playerInfo.MouseButton1Click:Connect(function()
+	setclipboard("https://www.roblox.com/users/"..localPlayer.UserId.."/profile")
+end)
+
 playerInfo.DisplayName.Text = localPlayer.DisplayName
 playerInfo.UserName.Text = localPlayer.Name
 playerInfo.Avatar.Image = "https://www.roblox.com/headshot-thumbnail/image?userId="..localPlayer.UserId.."&width=420&height=420&format=png"
@@ -147,7 +152,13 @@ end)
 
 -- Server info
 local gameInfo = homePage.GameInfo
+
 local actualGameInfo = marketplaceService:GetProductInfo(game.PlaceId, Enum.InfoType.Asset)
+
+-- Copy join script
+gameInfo.MouseButton1Click:Connect(function()
+	setclipboard('game:GetService("TeleportService"):TeleportToPlaceInstance("' .. game.PlaceId .. '", "' .. game.JobId .. '")')
+end)
 
 gameInfo.Icon.Image = "rbxassetid://"..actualGameInfo.IconImageAssetId
 gameInfo.GameName.Text = actualGameInfo.Name
