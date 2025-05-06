@@ -4,7 +4,7 @@
 	Scripter: @mt.__index
 	Developer: @mt.__index
 
-	Copyright: Do whatever you want, I don't care.
+	Copyright: Do whatever you want, I don't care. 
 ]]
 
 if _CRYSTAL_LOADED then return end
